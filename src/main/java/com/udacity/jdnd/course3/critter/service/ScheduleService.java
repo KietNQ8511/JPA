@@ -63,7 +63,7 @@ public class ScheduleService {
 	}
 
 	public List<ScheduleDTO> getScheduleForPet(long petId) {
-		List<Schedule> schedules = scheduleRepository.findByPetIdList(petId);
+		List<Schedule> schedules = scheduleRepository.findByPets_Id(petId);
 		return mapSchedulesToScheduleDTOs(schedules);
 	}
 
@@ -75,7 +75,7 @@ public class ScheduleService {
 		//
 		List<Schedule> scheduleList = new ArrayList<>();
 		for (Pet pet : petList) {
-			scheduleList.addAll(scheduleRepository.findByPetIdList(pet.getId()));
+			scheduleList.addAll(scheduleRepository.findByPets_Id(pet.getId()));
 		}
 
 		return mapSchedulesToScheduleDTOs(scheduleList);
@@ -90,7 +90,7 @@ public class ScheduleService {
 	}
 
 	public List<ScheduleDTO> getScheduleForEmployee(long employeeId) {
-		List<Schedule> scheduleList = scheduleRepository.findByEmployeeIdList(employeeId);
+		List<Schedule> scheduleList = scheduleRepository.findByEmployees_Id(employeeId);
 		return mapSchedulesToScheduleDTOs(scheduleList);
 	}
 	

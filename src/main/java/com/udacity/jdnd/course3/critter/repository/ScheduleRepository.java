@@ -9,6 +9,8 @@ import com.udacity.jdnd.course3.critter.entitty.Schedule;
 
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
-	List<Schedule> findByEmployeeIdList(Long employeeId);
-    List<Schedule> findByPetIdList(Long petId);
+	// find schedule by employee
+	List<Schedule>  findByEmployees_Id(Long employeeId);
+	// find schedule by pet
+    List<Schedule>  findByPets_Id(Long petId);
 }
